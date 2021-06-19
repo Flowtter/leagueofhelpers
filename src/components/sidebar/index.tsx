@@ -7,13 +7,13 @@ type Props = {
 };
 
 function Menu(props: Props) {
-	const img = props.image.replaceAll('\"', '');
+	const img = props.image.replaceAll('"', '');
 	if (img === '' || img === null || img === undefined) {
 		return null;
 	}
 	return (
 		<button className={styles.menu} type='button' onClick={() => props.setCurrent(img)}>
-			<img src={`http://ddragon.leagueoflegends.com/cdn/11.12.1/img/champion/${img}.png`} alt={img} className={styles.image} />
+			<img src={`https://ddragon.leagueoflegends.com/cdn/11.12.1/img/champion/${img}.png`} alt={img} className={styles.image} />
 		</button>
 	);
 }

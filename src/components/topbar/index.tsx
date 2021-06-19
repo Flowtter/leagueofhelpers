@@ -11,7 +11,7 @@ type Champ = {
 };
 
 function getChampions(setChampions: any) {
-	const url = 'http://ddragon.leagueoflegends.com/cdn/11.12.1/data/en_US/champion.json';
+	const url = 'https://ddragon.leagueoflegends.com/cdn/11.12.1/data/en_US/champion.json';
 	axios.get(url).then(r => {
 		setChampions(r.data.data);
 	});
