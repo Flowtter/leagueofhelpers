@@ -1,0 +1,22 @@
+@import 'fonts';
+html,
+body,
+#root {
+    margin: 0;
+    height: 100vh;
+}
+
+body {
+    font-family: 'Nunito', sans-serif;
+}
+
+.page {
+    left: 410px;
+    position: absolute;
+    width: 50%;
+    padding-top: 20px;
+    h1 {
+        font-weight: 700;
+        margin-bottom: 0;
+    }
+}

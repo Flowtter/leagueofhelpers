@@ -1,0 +1,27 @@
+@import '../../styles/constants.scss';
+.topbar {
+    width: 100vw;
+    height: 50px;
+    background-color: $light-black;
+}
+
+.picker {
+    margin: auto 10px;
+    position: relative;
+    top: 50%;
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+    color: $white !important;
+}
+
+.title {
+    position: relative;
+    margin-top: -45px;
+    text-align: center;
+}
+
+@media (max-width: 800px) {
+    .picker {
+        width: 80px !important;
+    }
+}

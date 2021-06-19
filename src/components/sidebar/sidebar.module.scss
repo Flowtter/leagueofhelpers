@@ -1,0 +1,42 @@
+@import '../../styles/constants.scss';
+.sidebar {
+    background-color: $light-black;
+    height: calc(100vh - 50px);
+    width: 70px;
+    float: left;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    margin-top: 50px;
+}
+
+::-webkit-scrollbar {
+    width: 0;
+    background: transparent;
+}
+
+ ::-webkit-scrollbar-thumb {
+    background: #FF0000;
+}
+
+.menu {
+    margin: 20px 7px 5px 7px;
+    width: 56px;
+    overflow: hidden;
+    border-radius: 50%;
+    transition: all 0.25s;
+}
+
+.image {
+    display: block;
+    width: 65px;
+    margin: -4px;
+    margin-left: -8px;
+}
+
+.menu:hover {
+    border-radius: 35%;
+}
+
+button:focus {
+    outline: none;
+}

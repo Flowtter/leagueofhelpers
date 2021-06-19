@@ -1,0 +1,18 @@
+.videoMenu {
+    height: calc(100vh - 50px);
+    width: calc(100vw - 70px);
+    float: right;
+    overflow-x: hidden;
+    overflow-y: scroll;
+}
+
+.video {
+    margin: 30px auto 70px auto;
+}
+
+@media (max-width: 800px) {
+    .video {
+        width: 64vw !important;
+        height: 36vw !important;
+    }
+}
