@@ -7,7 +7,7 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import { toast } from 'react-toastify';
-import { SelectPicker, Button, IconButton, Icon } from 'rsuite';
+import { SelectPicker, IconButton, Icon } from 'rsuite';
 import styles from './topbar.module.scss';
 
 type Champ = {
