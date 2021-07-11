@@ -79,6 +79,7 @@ export default function App() {
 				addChampions={addChampions}
 				champions={champions}
 				api={api}
+				current={current}
 			/>
 			<Videos
 				videos={videos}

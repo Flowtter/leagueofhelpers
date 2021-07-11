@@ -27,9 +27,10 @@ type Props = {
 	addChampions: any;
 	champions: any;
 	api: any;
+	current: any;
 };
 
-function getVideosForRandomChampion(champion: string, api: any) {
+function openVideoForChampion(champion: string, api: any) {
 	const notify = (err: string) => toast.error(err);
 	const date = new Array<string>();
 	const cvideos = new Array<string>();
@@ -65,7 +66,7 @@ function getVideosForRandomChampion(champion: string, api: any) {
 
 function random(champions: any, api: any) {
 	var champ = champions[Math.floor(Math.random() * champions.length)];
-	getVideosForRandomChampion(champ.label, api);
+	openVideoForChampion(champ.label, api);
 }
 
 function addChampion(addChampions: any, champions: any, value: string, setValue: any) {
@@ -108,14 +109,9 @@ export default function Topbar(props: Props) {
 				className={styles.picker}
 			/>
 
-			<Button
-				className={styles.picker}
-				onClick={() => del(value, props.champions, props.addChampions)}
-				type="button"
-			>
-				Delete
-			</Button>
-			<IconButton icon={<Icon icon='search-peoples' />} className={styles.random} onClick={() => random(Object.keys(champions).map(key => ({ label: key, value: key })), props.api)} />
+			<IconButton icon={<Icon icon='trash' />} className={styles.button} onClick={() => del(value, props.champions, props.addChampions)} />
+			<IconButton icon={<Icon icon='search' />} className={styles.button} onClick={() => openVideoForChampion(props.current,props.api)} />
+			<IconButton icon={<Icon icon='search-peoples' />} className={styles.button} onClick={() => random(Object.keys(champions).map(key => ({ label: key, value: key })), props.api)} />
 		</div>
 	);
 }
