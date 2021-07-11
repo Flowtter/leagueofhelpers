@@ -110,7 +110,7 @@ export default function Topbar(props: Props) {
 			/>
 
 			<IconButton icon={<Icon icon='trash' />} className={styles.button} onClick={() => del(value, props.champions, props.addChampions)} />
-			<IconButton icon={<Icon icon='search' />} className={styles.button} onClick={() => openVideoForChampion(props.current,props.api)} />
+			<IconButton icon={<Icon icon='search' />} className={styles.button} onClick={() => openVideoForChampion(props.current, props.api)} />
 			<IconButton icon={<Icon icon='search-peoples' />} className={styles.button} onClick={() => random(Object.keys(champions).map(key => ({ label: key, value: key })), props.api)} />
 		</div>
 	);
