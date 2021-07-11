@@ -78,6 +78,7 @@ export default function App() {
 			<Topbar
 				addChampions={addChampions}
 				champions={champions}
+				api={api}
 			/>
 			<Videos
 				videos={videos}

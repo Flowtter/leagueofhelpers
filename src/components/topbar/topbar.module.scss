@@ -14,6 +14,15 @@
     color: $white !important;
 }
 
+.random {
+    margin: auto 5px;
+    position: relative;
+    top: 50%;
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+    color: $white !important;
+}
+
 .title {
     position: relative;
     margin-top: -45px;
