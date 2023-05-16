@@ -16,9 +16,17 @@ type Champ = {
 };
 
 function getChampions(setChampions: any) {
-	const url = 'https://ddragon.leagueoflegends.com/cdn/11.12.1/data/en_US/champion.json';
+	const url = 'https://valorant-api.com/v1/agents?isPlayableCharacter=true';
+
 	axios.get(url).then(r => {
-		setChampions(r.data.data);
+		const champions =  {};
+
+		// eslint-disable-next-line guard-for-in
+		for (const champion in r.data.data) {
+			champions[r.data.data[champion].displayName] = r.data.data[champion].uuid;
+		}
+	
+		setChampions(champions);
 		return r.data.data.length;
 	});
 }
@@ -34,11 +42,11 @@ function openVideoForChampion(champion: string, api: any) {
 	const notify = (err: string) => toast.error(err);
 	const date = new Array<string>();
 	const cvideos = new Array<string>();
-	api.searchAll(['Challenger Replays', champion].join(' '), 10)
+	api.searchAll(['Valorant daily', champion].join(' '), 10)
 		.then((data) => {
 			const objs = data['items'];
 			objs.forEach(element => {
-				if (element !== undefined && element['id']['kind'] === 'youtube#video' && element['snippet']['channelId'] === 'UCsVz2qkd_oGXGC66fcH4SFA') {
+				if (element !== undefined && element['id']['kind'] === 'youtube#video' && element['snippet']['channelId'] === 'UCOR8JcMRg_cFKx0etV5zXBQ') {
 					cvideos.push(element['id']['videoId']);
 					date.push(element['snippet']['publishedAt']);
 				}
@@ -97,7 +105,7 @@ export default function Topbar(props: Props) {
 	const [champions, setChampions] = useState<Array<Champ>>(new Array<Champ>());
 	const [value, setValue] = useState(String);
 	useEffect(() =>
-		getChampions(setChampions), []
+		getChampions(setChampions), [props]
 	);
 	return (
 		<div id='topbar' className={styles.topbar}>

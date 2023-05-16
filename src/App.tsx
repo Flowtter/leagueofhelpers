@@ -18,12 +18,12 @@ function getVideosForChampion(setVideos: any, champion: string, api: any) {
 	const notify = (err: string) => toast.error(err);
 	const date = new Array<string>();
 	const cvideos = new Array<string>();
-	api.searchAll(['Challenger Replays', champion].join(' '), 10)
+	api.searchAll(['Valorant daily', champion].join(' '), 10)
 		.then((data) => {
 			const objs = data['items'];
 			setVideos(new Array<string>());
 			objs.forEach(element => {
-				if (element !== undefined && element['id']['kind'] === 'youtube#video' && element['snippet']['channelId'] === 'UCsVz2qkd_oGXGC66fcH4SFA') {
+				if (element !== undefined && element['id']['kind'] === 'youtube#video' && element['snippet']['channelId'] === 'UCOR8JcMRg_cFKx0etV5zXBQ') {
 					cvideos.push(element['id']['videoId']);
 					date.push(element['snippet']['publishedAt']);
 				}
@@ -59,13 +59,13 @@ function storageSidebar(champions: any, addChampions: any) {
 }
 
 export default function App() {
-	const [champions, addChampions] = useState<Array<string>>(new Array<string>('Jhin'));
+	const [champions, addChampions] = useState<Array<string>>(new Array<string>('Reyna'));
 
 	useEffect(() => storageSidebar(champions, addChampions), []);
 	const api = new YoutubeDataAPI(process.env.REACT_APP_API_KEY!);
 	const [videos, setVideos] = useState<Array<string>>(new Array<string>());
 
-	const [current, setCurrent] = useState<string>('Jhin');
+	const [current, setCurrent] = useState<string>('Reyna');
 	useEffect(() => getVideosForChampion(setVideos, current, api), [current]);
 
 	return (
