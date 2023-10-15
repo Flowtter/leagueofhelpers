@@ -93,6 +93,70 @@ function del(value: any, champions: any, addChampions: any) {
 	localStorage.setItem('champions', tmp);
 }
 
+function findRandomTopLaner(champions: any) {
+	const top = [
+		'Maokai',
+		'Naafiri',
+		'Olaf',
+		'Camille',
+		'Urgot',
+		'Zac',
+		'Kayle',
+		'Ornn',
+		'Dr. Mundo',
+		'Nasus',
+		'Poppy',
+		'Quinn',
+		'Fiora',
+		'Vayne',
+		'Garen',
+		'Malphite',
+		'Akshan',
+		'Gwen',
+		'Rengar',
+		'Kled',
+		'Warwick',
+		'Singed',
+		"Cho'Gath",
+		'Shen',
+		'Illaoi',
+		'Aatrox',
+		'Heimerdinger',
+		'Vladimir',
+		'Darius',
+		'Tryndamere',
+		'Riven',
+		'Pantheon',
+		'Sett',
+		'Udyr',
+		'Irelia',
+		'Kennen',
+		'Yone',
+		'Gnar',
+		'Gangplank',
+		'Sylas',
+		'Tahm Kench',
+		'Wukong',
+		'Rumble',
+		'Yorick',
+		'Volibear',
+		'Teemo',
+		'Trundle',
+		'Renekton',
+		'Sion',
+		'Mordekaiser',
+		'Jayce',
+		'Jax',
+		'Akali',
+		'Gragas',
+		'Yasuo',
+		'Lee Sin',
+		"K'Sante",
+		'Briar'
+	];
+	return top[Math.floor(Math.random() * top.length)];
+}
+
 export default function Topbar(props: Props) {
 	const [champions, setChampions] = useState<Array<Champ>>(new Array<Champ>());
 	const [value, setValue] = useState(String);
@@ -112,6 +176,7 @@ export default function Topbar(props: Props) {
 			<IconButton icon={<Icon icon='trash' />} className={styles.button} onClick={() => del(value, props.champions, props.addChampions)} />
 			<IconButton icon={<Icon icon='search' />} className={styles.button} onClick={() => openVideoForChampion(props.current, props.api)} />
 			<IconButton icon={<Icon icon='search-peoples' />} className={styles.button} onClick={() => random(Object.keys(champions).map(key => ({ label: key, value: key })), props.api)} />
+			<IconButton icon={<Icon icon='rocket' />} className={styles.button} onClick={() => openVideoForChampion(findRandomTopLaner(champions), props.api)} />
 		</div>
 	);
 }

@@ -22,7 +22,6 @@
         "i18next": "^19.8.4",
         "i18next-browser-languagedetector": "^6.0.1",
         "moment": "^2.29.1",
-        "node-sass": "^4.14.1",
         "react": "^17.0.1",
         "react-chartjs-2": "^3.0.3",
         "react-checkmark": "^1.4.0",
@@ -37,6 +36,7 @@
         "reactn": "^2.2.7",
         "rsuite": "^4.8.9",
         "rsuite-table": "^3.14.3",
+        "sass": "^1.62.1",
         "screenfull": "^5.1.0",
         "typescript": "^4.0.3",
         "web-vitals": "^0.2.4",
@@ -98,5 +98,9 @@
         "prettier": "^2.2.1",
         "prettier-eslint": "^12.0.0",
         "prettier-eslint-cli": "^5.0.0"
+    },
+    "resolutions": {
+        "@types/react": "17.0.2",
+        "@types/react-dom": "17.0.2"
     }
 }

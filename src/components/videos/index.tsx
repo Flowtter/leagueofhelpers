@@ -27,7 +27,7 @@ type Props = {
 export default function Videos(props: Props) {
 	const videos = props.videos.map((c, key) =>
 		<Video
-			key={key.toString()}
+			key={`${key.toString()}video`}
 			videoLink={c}
 		/>
 	);

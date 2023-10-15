@@ -26,7 +26,7 @@ type Champions = {
 export default function Sidebar(props: Champions) {
 	const menus = props.champions.map((c, key) =>
 		<Menu
-			key={key.toString()}
+			key={`${key.toString()}menu`}
 			image={c}
 			setCurrent={props.setCurrent}
 		/>
